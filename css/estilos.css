@@ -28,15 +28,36 @@ h1 {
 
 .portfolio {
     background: #fafafa;
+    padding: 20px;
 }
 
 .project {
     border: 1px solid gray;
     border-radius: 10px;
-    margin: 10px;
     margin-bottom: 15px;
     padding: 20px;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-course, .project-date, .project-url {
+    margin: 10px 0;
+}
+
+.project-description {
+    font-size: 20px;
+}
+
+.project strong {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .project-details {
@@ -94,6 +115,15 @@ h1 strong {
     color: #026fff;
 }
 
+h2 {
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
 .footer {
     color: white;
     background: #1b2127;
@@ -108,4 +138,48 @@ h1 strong {
 
 .footer a {
     color: white;
+}
+
+.event {
+    margin: 10px;
+    width: 480px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f4fbff;
+}
+
+.event-list {
+    display: flex;
+}
+
+.event img {
+    width: 480px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-detail {
+    margin: 20px 40px;
+    background-color: white;
+    margin-top: -40px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.event-description {
+    text-align: left;
+}
+
+.event-url {
+    color: #056fff;
+    border: 1px solid; /*border por defecto toma el color declarado en color*/
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.event-list-title {
+    margin-left: 10px;
 }
