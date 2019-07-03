@@ -260,6 +260,7 @@ h2 {
 
 .container {
     max-width: 1000px;
+    flex: 1;
     margin: 0 auto; /*centra el elemento*/
     display: inherit;
     justify-content: inherit;
@@ -274,9 +275,26 @@ h2 {
 
 }
 
-/* Segunda forma de incluir media query */
-@media screen and (max-width: 768px) {
-
+/* Se quita un pixel al break point porque los cambios se aplicarán a todos los
+dispositivos con ancho menor a 768. */
+@media screen and (max-width: 767px) {
+    .header {
+        display: block;
+        height: auto;
+    }
+    .header ol {
+        display: block;
+    }
+    .header ol li {
+        height: 50px;
+        text-align: center;
+    }
+    .header a {
+        justify-content: center;
+    }
+    .header .logo {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 480px) {
