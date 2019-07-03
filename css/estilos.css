@@ -263,9 +263,23 @@ h2 {
     flex-wrap: wrap;
 }
 
+/* Desktop first: Empezar desde el media query más grande */
+
+@media screen and (max-width: 1024px) {
+
+}
+
 /* Segunda forma de incluir media query */
 @media screen and (max-width: 768px) {
     body {
         border: 10px solid green;
     }
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 320px) {
+
 }
