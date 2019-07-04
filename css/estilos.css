@@ -68,10 +68,14 @@ h1 {
 }
 
 .project-details {
-    width: 500px;
+    width: 50%;
 }
 .project-imageContainer {
-    width: 500px;
+    width: 50%;
+}
+
+.project-imageContainer img {
+    max-width: 100%; /*100% del ancho del elemento padre*/
 }
 
 .header {
@@ -295,10 +299,45 @@ dispositivos con ancho menor a 768. */
     .header .logo {
         text-align: center;
     }
+    .project {
+        display: block;
+    }
+    .project-imageContainer {
+        width: auto;
+        text-align: center;
+    }
+    .project-details {
+        width: auto;
+        /* Por defecto el tamaño heredado de fuente es de 16px por eso se omite
+        la declaración de tamaño de fuente. */
+        /* font-size: 16px; */
+    }
+    .project-course, .project-date, .project-url {
+        margin: .3em 0;
+    }
+    .project-title {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+    .project-url {
+        font-size: 1em;
+    }
+    .project-course {
+        font-size: .7em;
+    }
+    .project-date {
+        font-size: 1em;
+    }
+    .project-description {
+        font-size: .8em;
+    }
 }
 
 @media screen and (max-width: 480px) {
-
+    .project-details {
+        width: auto;
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 320px) {
