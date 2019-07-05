@@ -279,6 +279,34 @@ h2 {
     .container {
         padding: 0 1em;
     }
+    .hero {
+        height: auto;
+        /* Es necesario especificar al contenedor hero con posición relativa
+        para que la imagen pueda ubicarse de manera absoluta con respecto a hero.
+        */
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+    .hero-image {
+        position: absolute;
+        z-index: 1;
+        /* Al poner los valores de left, right, top y bottom en cero se logra
+        que el elemento se estire en todas sus direcciones. */
+        left: 0;
+        right: 0;
+        /* top: -40%; */
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        /* Object position se usa para que al mostrar la foto no se corte la 
+        cabeza de Leonidas ;) */
+        object-position: center 27%;
+    }
+    h1 {
+        font-size: 2em;
+        z-index: 2;
+    }
 }
 
 /* Se quita un pixel al break point porque los cambios se aplicarán a todos los
@@ -347,6 +375,9 @@ dispositivos con ancho menor a 768. */
 }
 
 @media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
     .project-details {
         width: auto;
         font-size: 12px;
@@ -383,5 +414,12 @@ dispositivos con ancho menor a 768. */
 }
 
 @media screen and (max-width: 320px) {
-
+    h1 {
+        font-size: 1.2em;
+        /* El background mejora la legibilidad  */
+        background: rgba(0, 0, 0, 0.5);
+    }
+    .hero {
+        padding: 2em 1em;
+    }
 }
