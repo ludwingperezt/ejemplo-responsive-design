@@ -276,7 +276,9 @@ h2 {
 /* Desktop first: Empezar desde el media query más grande */
 
 @media screen and (max-width: 1024px) {
-
+    .container {
+        padding: 0 1em;
+    }
 }
 
 /* Se quita un pixel al break point porque los cambios se aplicarán a todos los
@@ -354,6 +356,29 @@ dispositivos con ancho menor a 768. */
         para ningún elemento padre. */
         margin: -2em .5em .5em;
         padding: 1em;
+    }
+    .contact {
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+
+    .form-email button {
+        margin: 1em auto;
+    }
+    .form-email h3 {
+        /* Iguala los márgenes superior e inferior */
+        margin-top: 0;
+    }
+    .footer {
+        display: block;
+        text-align: center;
+        /* Sin la siguiente linea, el footer se arruina por los márgenes aplicados
+        a los elementos hijos.  Eso se arregla (cuando no se usa flex) aplicando
+        un padding o un margin.  En el presente caso se aplica un borde transparente */
+        border: 1px solid transparent;
+
     }
 }
 
