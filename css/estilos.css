@@ -273,6 +273,11 @@ h2 {
     flex-wrap: wrap;
 }
 
+.html-video {
+    width: 100%;
+    height: auto;
+}
+
 /* Desktop first: Empezar desde el media query más grande */
 
 @media screen and (max-width: 1024px) {
@@ -299,7 +304,7 @@ h2 {
         top: 0;
         bottom: 0;
         width: 100%;
-        /* Object position se usa para que al mostrar la foto no se corte la 
+        /* Object position se usa para que al mostrar la foto no se corte la
         cabeza de Leonidas ;) */
         object-position: center 27%;
     }
