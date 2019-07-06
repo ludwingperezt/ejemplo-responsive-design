@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?3y9y7k');
+  src:  url('../fonts/icomoon.eot?3y9y7k#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?3y9y7k') format('truetype'),
+    url('../fonts/icomoon.woff?3y9y7k') format('woff'),
+    url('../fonts/icomoon.svg?3y9y7k#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
@@ -276,6 +306,37 @@ h2 {
 .html-video {
     width: 100%;
     height: auto;
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%
+    height: 100%;
+}
+
+.flexible-video {
+    width: 100%;
+    height: 0;
+    /*
+    Cálculo del aspect ratio de la caja:
+    1. Se calcula la proporcion alto/ancho por medio de la siguiente operación:
+        315 * 100 / 560 = 56.25 <-- Es la proporción entre alto y ancho (16:9)
+    2. Si a una caja se le pone una altura de cero, el único elemento que puede
+       modificar su altura sería el padding, y cuando a éste se le coloca un
+       valor porcentual el cálculo se hace en base al ancho del elemento (por
+       ejemplo, para una caja de ancho 100px, alto 0 y padding-top 100%, el
+       valor final de padding-top será de 100px. Si en cambio se coloca un valor
+       de padding-top de 25%, el valor final calculado será de 25px).
+    3. Por la razón del punto 2 el padding-top se coloca a 56.25% para que
+       mantenga un aspect ratio de 16:9 (9/16 = 0.5625).
+    */
+    padding-top: 56.25%;
+    position: relative;
+
 }
 
 /* Desktop first: Empezar desde el media query más grande */
