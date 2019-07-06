@@ -356,6 +356,26 @@ h2 {
 
 }
 
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    /*
+    Antes de flex, para centrar de manera vertical se igualaba la propiedad
+    line-height al alto del elemento.
+    Para centrar horizontalmente se utilizaba la propiedad text-align: center.
+    */
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+}
+
 /* Desktop first: Empezar desde el media query más grande */
 
 @media screen and (max-width: 1024px) {
@@ -395,6 +415,9 @@ h2 {
 /* Se quita un pixel al break point porque los cambios se aplicarán a todos los
 dispositivos con ancho menor a 768. */
 @media screen and (max-width: 767px) {
+    .burger-button {
+        display: block;
+    }
     .header {
         display: block;
         height: auto;
