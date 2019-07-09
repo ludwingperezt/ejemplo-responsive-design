@@ -431,9 +431,43 @@ dispositivos con ancho menor a 768. */
     }
     .header a {
         justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        text-decoration: underline;
+        margin-bottom: .5em;
     }
     .header .logo {
         text-align: center;
+    }
+
+    .menu {
+        position: fixed;
+        background: rgba(5, 111, 255, 0.9);
+        z-index: 3;
+        top: 0;
+        /*
+        Por defecto el menú está oculto, por ello se aplica un valor negativo
+        correspondiente al total del ancho del elemento a la propiedad left,
+        para que se oculte a la izquierda.
+        */
+        left: -100vw;
+        width: 100vw;
+        /* height: 100vh; */
+        /* Debido a que el alto del elemento originalmente es inherit, se
+        utiliza bottom: 0 para hacer que el elemento tenga el alto de la
+        pantalla. */
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Animación para mostrar el menú */
+        transition: .3s;
+    }
+    .menu.is-active {
+        /*
+        El menú se muestra cuando se le aplica la clase is-active.
+        */
+        left: 0;
     }
     .project {
         display: block;
