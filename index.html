@@ -151,9 +151,31 @@
             </div>
         </footer>
         <script>
+            //Ejemplo de uso de media query en javascript
+            const ipad = window.matchMedia('screen and (max-width: 767px)');
             const menu = document.querySelector('.menu');
             const burgerButton = document.querySelector('#burger-menu');
-            burgerButton.addEventListener('click', hideShow);
+
+
+            //Agregar a la media query un evento para cuando cambie la
+            //resolución de la pantalla
+            ipad.addListener(validation);
+
+            function validation(event) {
+                // Cuando se dispara el evento validation, es decir, cuando la
+                // pantalla cambia de tamaño, se verifica si la media query
+                // cumple la condición especificada.  Si la cumple agrega un listener
+                // para el evento click y si no la cumple, quita ese listener
+                // de evento click. Se hace ésto para optimizar los recursos.
+                // (un listener consume recursos y no vale la pena tenerlo
+                // siempre si no se va a usar.)
+                if (event.matches) {
+                    burgerButton.addEventListener('click', hideShow);
+                }
+                else {
+                    burgerButton.removeEventListener('click', hideShow);
+                }
+            }
 
             function hideShow() {
                 if (menu.classList.contains('is-active')) {
