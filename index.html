@@ -177,6 +177,16 @@
                 }
             }
 
+            /*
+            Se hace la llamada a la función de validación enviando como parametro
+            el media query (por la propiedad matches) ya que ese evento solo
+            se disparaba al cambiar la pantalla de tamaño. Si se iniciaba
+            diréctamente en un tamaño pequeño, éste evento no se disparaba
+            y por lo tanto el burger menu no funcionaba.  La llamada explícita
+            a la función resulve el bug.
+            */
+            validation(ipad);
+
             function hideShow() {
                 if (menu.classList.contains('is-active')) {
                     menu.classList.remove('is-active');
