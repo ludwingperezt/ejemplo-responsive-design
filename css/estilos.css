@@ -378,7 +378,14 @@ h2 {
 
 /* Desktop first: Empezar desde el media query más grande */
 
-@media screen and (max-width: 1024px) {
+/**
+Se cambió la media query a 1023 porque a partir de 1024 se considera que es
+la pantalla de un desktop.
+*/
+@media screen and (max-width: 1023px) {
+    .event-list-title {
+        margin-left: 0;
+    }
     .portfolio {
         padding: 0;
     }
@@ -418,6 +425,10 @@ h2 {
 /* Se quita un pixel al break point porque los cambios se aplicarán a todos los
 dispositivos con ancho menor a 768. */
 @media screen and (max-width: 767px) {
+    h2 {
+        font-size: 1.2em;
+        margin: .5em 0;
+    }
     .burger-button {
         display: block;
     }
@@ -502,7 +513,7 @@ dispositivos con ancho menor a 768. */
         font-size: 1em;
     }
     .project-description {
-        font-size: .8em;
+        font-size: 1em;
     }
     .event {
         width: auto;
@@ -523,7 +534,7 @@ dispositivos con ancho menor a 768. */
     }
     .project-details {
         width: auto;
-        font-size: 12px;
+        font-size: 14px;
     }
     .event-detail {
         /* En éste punto 1em = 16px ya que no se ha definido un tamaño de fuente
@@ -553,6 +564,16 @@ dispositivos con ancho menor a 768. */
         un padding o un margin.  En el presente caso se aplica un borde transparente */
         border: 1px solid transparent;
 
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        /**
+        Se coloca background-size: 100% para que el tamaño se establezca como
+        el tamaño del ancho y alto.
+        */
+        background-size: 100%;
     }
 }
 
